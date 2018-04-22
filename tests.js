@@ -336,4 +336,22 @@ suite('swagger converts', (s) => {
 			},
 		}
 	);
+
+	simpleTest(
+		joi.object().keys({
+			value: joi.string().default('hello').example('world'),
+		}).unknown(false).example({
+			value: 'hello',
+		}),
+		{
+			type: 'object',
+			additionalProperties: false,
+			example: {
+				value: 'hello',
+			},
+			properties: {
+				value: { example: 'world', type: 'string', default: 'hello' },
+			},
+		}
+	);
 });
