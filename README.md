@@ -106,6 +106,8 @@ J2S returns a result object containing `swagger` and `definitions` properties. `
 
 - `any.default()` sets the `"default"` detail.
 
+- `any.example(input)` -> `"example": input`.
+
 ## Meta Overrides
 
 The following may be provided on a joi `.meta()` object to explicitly override default joi-to-schema behavior.
